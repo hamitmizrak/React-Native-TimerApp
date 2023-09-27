@@ -70,7 +70,7 @@ class ClassTimerApp extends Component {
                     </TouchableOpacity>
                 </View>
             </View>
-        ) //end retur
+        ) //end return
     } //end render
 } //end class
 
