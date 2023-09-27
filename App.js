@@ -1,12 +1,24 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import ClassTimerApp from './src/container/ClassTimerApp';
+import FunctionTimerApp from './src/container/FunctionTimerApp';
 
+// CREATE
+// Create
+const Stack=createNativeStackNavigator();
+
+// FUNCTION
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home"      component={HomeScreen}    options={{ title: "Anasayfa" }} />
+        <Stack.Screen name="TimerClass"   component={ClassTimerApp} options={{ title: "Timer Class App" }} />
+        <Stack.Screen name="TimerFunction"   component={FunctionTimerApp} options={{ title: "Timer Function App" }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -18,3 +30,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
+// BUTTON HomeScreen
+const HomeScreen = ({ navigation,route }) => {
+  return (
+    <View>
+
+      {/* Counter */}
+      <View style={{ marginBottom: 10 }}>
+        <Button
+          color='orange'
+          title='Class Timer App'
+          onPress={() => navigation.navigate('TimerClass', { name: 'TimerClass' })} />
+      </View>
+
+        {/* Counter */}
+        <View style={{ marginBottom: 10 }}>
+        <Button
+          color='blue'
+          title='Function Timer App'
+          onPress={() => navigation.navigate('TimerFunction', { name: 'TimerFunction' })} />
+      </View>
+    </View> // common View
+  ); //end return 
+} //end HomeScreen
