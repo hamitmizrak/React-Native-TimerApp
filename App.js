@@ -1,7 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import { StatusBar } from 'expo-status-bar';
+
+// React Native
 import { Button, StyleSheet, Text, View } from 'react-native';
+
+// Class , Function Component
 import ClassTimerApp from './src/container/ClassTimerApp';
 import FunctionTimerApp from './src/container/FunctionTimerApp';
 
@@ -21,17 +25,6 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// CSS
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
 
 // BUTTON HomeScreen
 const HomeScreen = ({ navigation,route }) => {
@@ -56,3 +49,13 @@ const HomeScreen = ({ navigation,route }) => {
     </View> // common View
   ); //end return 
 } //end HomeScreen
+
+// CSS
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});

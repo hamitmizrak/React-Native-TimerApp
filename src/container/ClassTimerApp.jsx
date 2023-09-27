@@ -6,20 +6,35 @@ import { Text } from 'react-native'
 // CLASS 
 class ClassTimerApp extends Component {
 
-    // STATE
-    state = {
+    // constructor ile yaparsak
+    constructor(props) {
+        super(props);
+
+        // STATE
+        this.state = {
+            counter: 0,
+        }
+
+        // BIND
+        this.counterTimerStart=this.counterTimerStart.bind(this);
+        this.counterTimerStop=this.counterTimerStop.bind(this);
+    }
+
+    // constructorsuz yaparsak (State)
+    /*
+       state = {
         counter: 0,
     }
+    */
 
     // TIMER
     timer = () => {
-
     }
 
     // Start
     counterTimerStart = () => {
-        //setInterval(function(){}, 1000) //1000ms=1s ==> Sonsuza kadar sürekli çalışır
-        //setTimeOut(function(){}, 1000) //1000ms=1s  ==> sadece 1 kere çalışır
+        // setInterval(function(){}, 1000) //1000ms=1s ==> Sonsuza kadar sürekli çalışır
+        // setTimeOut(function(){}, 1000) //1000ms=1s  ==> sadece 1 kere çalışır
         this.timer = setInterval(
             () => this.setState(() => ({ counter: this.state.counter + 1, })),
             1000
@@ -28,7 +43,7 @@ class ClassTimerApp extends Component {
 
     // Stop
     counterTimerStop = () => {
-        clearTimeout(this.timer)
+        clearTimeout(this.timer);
     }
 
     // RENDER
@@ -39,7 +54,7 @@ class ClassTimerApp extends Component {
             <View style={styles.container}>
                 {/* BUTTON GROUP */}
                 <View>
-                    <Text style={styles.textStyle}> Counter: {this.state.counter}</Text>
+                    <Text style={styles.textStyle}> Timer: {this.state.counter}</Text>
                 </View>
 
                 {/* Button Group */}
@@ -48,15 +63,16 @@ class ClassTimerApp extends Component {
                     <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStart}>
                         <Text style={styles.textStyle}> Start</Text>
                     </TouchableOpacity>
+
                     {/* BUTTON (reset) */}
                     <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStop}>
                         <Text style={styles.textStyle}> Stop</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-        )
-    }
-}
+        ) //end retur
+    } //end render
+} //end class
 
 // CSS
 const styles = StyleSheet.create({
