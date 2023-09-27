@@ -65,6 +65,7 @@ class ClassTimerApp extends Component {
 
                 {/* Button Group */}
                 <View style={styles.buttonGroup}>
+
                     {/* BUTTON (Start) */}
                     <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStart}>
                         <Text style={styles.textStyle}> Start</Text>
@@ -97,11 +98,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center', // sutun düzleminde (Y)
         backgroundColor: '#000',
     },
-
     buttonGroup: {
         flexDirection: "row"
     },
-
     buttonStyle: {
         backgroundColor: 'white',
         padding: 2,
@@ -110,7 +109,6 @@ const styles = StyleSheet.create({
         marginRight: 3,
         marginBottom: 10
     },
-
     textStyle: {
         color: "blue",
         fontSize: 21,

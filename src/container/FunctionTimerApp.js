@@ -58,7 +58,6 @@ function FunctionTimerApp() {
                     <Text style={styles.textStyle}> Reset</Text>
                 </TouchableOpacity>
 
-
             </View>
         </View>
     ) //end return
