@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import ClassTimerApp from './src/container/ClassTimerApp';
 import FunctionTimerApp from './src/container/FunctionTimerApp';
@@ -22,6 +22,7 @@ export default function App() {
   );
 }
 
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,
