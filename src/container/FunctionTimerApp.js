@@ -27,6 +27,12 @@ function FunctionTimerApp() {
         clearTimeout(this.timer);
     }
 
+    // Reset
+    counterTimerReset = () => {
+        setCounter(0);
+        clearTimeout(this.timer);
+    }
+
     // RETURN
     return (
         <View style={styles.container}>
@@ -37,15 +43,22 @@ function FunctionTimerApp() {
 
             {/* Button Group */}
             <View style={styles.buttonGroup}>
-                {/* BUTTON (reset) */}
+                {/* BUTTON (Start) */}
                 <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStart}>
                     <Text style={styles.textStyle}> Start</Text>
                 </TouchableOpacity>
 
-                {/* BUTTON (reset) */}
+                {/* BUTTON (Stop) */}
                 <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStop}>
                     <Text style={styles.textStyle}> Stop</Text>
                 </TouchableOpacity>
+
+                {/* BUTTON (Reset) */}
+                <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerReset}>
+                    <Text style={styles.textStyle}> Reset</Text>
+                </TouchableOpacity>
+
+
             </View>
         </View>
     ) //end return

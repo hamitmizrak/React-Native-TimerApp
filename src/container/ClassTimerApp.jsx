@@ -16,8 +16,8 @@ class ClassTimerApp extends Component {
         }
 
         // BIND
-        this.counterTimerStart=this.counterTimerStart.bind(this);
-        this.counterTimerStop=this.counterTimerStop.bind(this);
+        this.counterTimerStart = this.counterTimerStart.bind(this);
+        this.counterTimerStop = this.counterTimerStop.bind(this);
     }
 
     // constructorsuz yaparsak (State)
@@ -46,6 +46,12 @@ class ClassTimerApp extends Component {
         clearTimeout(this.timer);
     }
 
+    // Reset
+    counterTimerReset = () => {
+        this.setState(() => ({ counter: 0, }))
+        clearTimeout(this.timer);
+    }
+
     // RENDER
     render() {
 
@@ -59,14 +65,20 @@ class ClassTimerApp extends Component {
 
                 {/* Button Group */}
                 <View style={styles.buttonGroup}>
-                    {/* BUTTON (reset) */}
+                    {/* BUTTON (Start) */}
                     <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStart}>
                         <Text style={styles.textStyle}> Start</Text>
                     </TouchableOpacity>
 
-                    {/* BUTTON (reset) */}
+                    {/* BUTTON (Stop) */}
                     <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerStop}>
                         <Text style={styles.textStyle}> Stop</Text>
+                    </TouchableOpacity>
+
+
+                    {/* BUTTON (Reset) */}
+                    <TouchableOpacity style={styles.buttonStyle} onPress={this.counterTimerReset}>
+                        <Text style={styles.textStyle}> Reset</Text>
                     </TouchableOpacity>
                 </View>
             </View>
